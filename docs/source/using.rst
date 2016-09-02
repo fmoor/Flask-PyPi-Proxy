@@ -13,8 +13,8 @@ To download a package from the proxy, there are two choices:
 
   .. code-block:: bash
 
-      pip install -i http://mypypiproxy/simple/ Flask
-      easy_install -i http://mypypiproxy/simple/ Flask
+      $ pip install -i http://mypypiproxy/simple/ Flask
+      $ easy_install -i http://mypypiproxy/simple/ Flask
 
 * Use the index url in a configuration file. For easy_install, it
   should be on **~/.pydistutils.cfg** (on Linux), and the file should have
@@ -57,7 +57,7 @@ like:
 I you are using the configuration with basic auth, then the configuration
 file should look something like this:
 
-.. code-block::
+.. code-block:: ini
 
     [distutils]
     index-servers =
@@ -77,14 +77,14 @@ go to the **setup.py** of your project and run:
 
 .. code-block:: bash
 
-    python setup.py sdist upload -r myserver
+    $ python setup.py sdist upload -r myserver
 
 **IMPORTANT:** The command *register*, won't work if you are using basic auth.
 For example, if you run
 
 .. code-block:: bash
 
-    python setup.py register
+    $ python setup.py register
 
 and if your server is configured using basic auth, then register will return
 a 401 error. Simply upload the package without running register.
