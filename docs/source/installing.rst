@@ -101,12 +101,12 @@ authentication, so this shouldn't be used on production.
 
 .. code-block:: bash
 
-    >>> sudo apt-get install apache2 libapache2-mod-wsgi
-    >>> sudo apt-get install python-setuptools python-dev libxml2-dev libxslt-dev
-    >>> sudo easy_install Flask-Pypi-Proxy
+    $ sudo apt-get install apache2 libapache2-mod-wsgi
+    $ sudo apt-get install python-setuptools python-dev libxml2-dev libxslt-dev
+    $ sudo easy_install Flask-Pypi-Proxy
 
-    >>> mkdir -p /mnt/eggs/
-    >>> sudo chown www-data:www-data -R /mnt/eggs/
+    $ mkdir -p /mnt/eggs/
+    $ sudo chown www-data:www-data -R /mnt/eggs/
 
 Now, lets create the WSGI configuration file (in this example, I will
 create it on /mnt/eggs/flask_pypi_proxy.wsgi). The content of that file
@@ -139,7 +139,7 @@ Restart Apache
 
 .. code-block:: bash
 
-    >>> sudo service apache2 restart
+    $ sudo service apache2 restart
 
 
 More advanced configuration
@@ -150,14 +150,14 @@ virtualenv, also using HTTP basic auth to create some security for the eggs.
 
 .. code-block:: bash
 
-    >>> sudo apt-get install apache2 libapache2-mod-wsgi
-    >>> sudo apt-get install python-setuptools python-dev libxml2-dev libxslt-dev
+    $ sudo apt-get install apache2 libapache2-mod-wsgi
+    $ sudo apt-get install python-setuptools python-dev libxml2-dev libxslt-dev
 
 Now, create the user where the virtualenv will be installed:
 
 .. code-block:: bash
 
-    >>> sudo adduser pypi-proxy
+    $ sudo adduser pypi-proxy
     Adding user `pypi-proxy' ...
     Adding new group `pypi-proxy' (1001) ...
     Adding new user `pypi-proxy' (1001) with group `pypi-proxy' ...
@@ -165,8 +165,8 @@ Now, create the user where the virtualenv will be installed:
     Copying files from `/etc/skel' ...
     Enter new UNIX password:
     Retype new UNIX password:
-    >>> sudo easy_install virtualenv
-    >>> sudo su - pypi-proxy
+    $ sudo easy_install virtualenv
+    $ sudo su - pypi-proxy
 
 The following steps will be executed as **pypi-proxy**:
 
